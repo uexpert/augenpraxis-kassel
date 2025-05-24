@@ -258,8 +258,6 @@ Preloader Area CSS
   width: 100%;
   text-align: center;
   z-index: 9999999;
-  -webkit-transition: .9s;
-  transition: .9s;
 }
 
 .preloader .loader {
@@ -352,6 +350,8 @@ Preloader Area CSS
 
 .preloader.preloader-deactivate {
   visibility: hidden;
+  -webkit-transition: .9s;
+  transition: .9s;
 }
 
 .preloader.preloader-deactivate::after, .preloader.preloader-deactivate::before {

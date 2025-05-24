@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'page-main',
+  selector: 'comp-header',
   imports: [CommonModule, RouterModule],
-  templateUrl: './main.component.html',
-  styleUrl: './main.component.scss'
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.scss'
 })
-export class MainComponent {
+export class HeaderComponent {
   imagesPath = environment.imagesPath;
+
 }
