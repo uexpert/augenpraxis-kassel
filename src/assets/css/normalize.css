@@ -339,8 +339,6 @@ Preloader Area CSS
   width: 60%;
   z-index: -1;
   background: #1A76D1;
-  -webkit-transition: .9s;
-  transition: .9s;
 }
 
 .preloader::after {
@@ -356,6 +354,8 @@ Preloader Area CSS
 
 .preloader.preloader-deactivate::after, .preloader.preloader-deactivate::before {
   width: 0;
+  -webkit-transition: .9s;
+  transition: .9s;
 }
 
 .preloader.preloader-deactivate .loader {

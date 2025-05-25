@@ -15,8 +15,12 @@ export class MainService {
   ======================*/
   runPreloader() {
     $('.preloader').removeClass('preloader-deactivate');
-    // $(window).on('load', function () {
-    //   $('.preloader').addClass('preloader-deactivate');
-    // });
+    setTimeout(() => {
+        $('.preloader').addClass('preloader-deactivate');
+    }, 500);
   }
+
+  // removePreloader() {
+  //   $('.preloader').removeClass('preloader-deactivate');
+  // }
 }

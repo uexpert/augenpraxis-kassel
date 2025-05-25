@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, inject, OnInit } from '@angular/core';
+import { AfterViewInit, Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { CommonModule } from '@angular/common';
 import { MainService } from '../../core/services/main.service';
@@ -11,7 +11,7 @@ declare var $: any; // Declare jQuery
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   mainService = inject(MainService);
   imagesPath = environment.imagesPath;
 
@@ -22,9 +22,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.afterViewInit();
   }
+
+  ngOnDestroy(): void {
+    this.onDestroy();
+  }
+  
+  onDestroy() {
+    // this.mainService.removePreloader();
+  }
   
   onInit() {
-    // this.mainService.runPreloader();
+    this.mainService.runPreloader();
   }
 
   afterViewInit() {
