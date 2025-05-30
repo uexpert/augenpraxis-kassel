@@ -375,6 +375,14 @@ Version:	1.1
 
 
 }
+
+
+@media only screen and (max-width: 991px) {
+	
+	.schedule .single-schedule{
+		margin:15px 0;
+	}
+}
 /* Mobile Screen */
 @media only screen and (max-width: 767px) {
 .header.sticky{
@@ -584,9 +592,6 @@ Version:	1.1
 }
 .schedule .schedule-inner {
 	transform: none;
-}
-.schedule .single-schedule{
-	margin:15px 0;
 }
 .slider .single-slider{
 	position:relative;

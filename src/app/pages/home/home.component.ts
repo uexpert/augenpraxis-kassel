@@ -2,12 +2,14 @@ import { AfterViewInit, Component, inject, OnDestroy, OnInit } from '@angular/co
 import { environment } from '../../../environments/environment';
 import { CommonModule } from '@angular/common';
 import { MainService } from '../../core/services/main.service';
+import { SliderComponent } from "../../components/slider/slider.component";
+import { ScheduleComponent } from "../../components/schedule/schedule.component";
 
 declare var $: any; // Declare jQuery
 
 @Component({
   selector: 'page-home',
-  imports: [CommonModule],
+  imports: [CommonModule, SliderComponent, ScheduleComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
