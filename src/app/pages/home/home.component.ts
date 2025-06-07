@@ -4,18 +4,22 @@ import { CommonModule } from '@angular/common';
 import { MainService } from '../../core/services/main.service';
 import { SliderComponent } from "../../components/slider/slider.component";
 import { ScheduleComponent } from "../../components/schedule/schedule.component";
+import { LatestNewsComponent } from '../../components/latest-news/latest-news.component';
+import { praxisClose, transportList } from '../../core/utils/models_interfaces';
 
 declare var $: any; // Declare jQuery
 
 @Component({
   selector: 'page-home',
-  imports: [CommonModule, SliderComponent, ScheduleComponent],
+  imports: [CommonModule, SliderComponent, ScheduleComponent, LatestNewsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   mainService = inject(MainService);
   imagesPath = environment.imagesPath;
+  transportList = transportList;
+  praxisClose = praxisClose;
 
   ngOnInit(): void {
     this.onInit();

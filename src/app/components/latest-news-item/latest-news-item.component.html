@@ -1,0 +1,49 @@
+@if (item.text || (item.type === 'unorder-list' && item.list.length)) {
+    <div [ngStyle]="{paddingLeft: item.paddingLeft}">
+        @switch (item.type) {
+            @case ('title') {
+                <ng-container *ngTemplateOutlet="subTitle;
+                    context: { item }"
+                    >
+                </ng-container>
+            }
+            @case ('sub-title') {
+                <ng-container *ngTemplateOutlet="subTitle;
+                    context: { item }"
+                    >
+                </ng-container>
+            }
+            @case ('button') {
+                <button class="btn">{{item.text}}</button>
+            }
+            @case ('unorder-list') {
+                <ul class="custom-list">
+                    @for (str of item.list; track str) {
+                        <li>{{str}}</li>
+                    }
+                </ul>
+            }
+            @default {
+                <p class="text-primary font-xs-16"
+                    [ngClass]="{'x-font-semiBold': ['normal-b', 'normal-p-b'].includes(item.type),
+                                'no-margin': ['normal', 'normal-b'].includes(item.type)
+                                }"
+                    >
+                    {{item.text}}
+                </p>
+            }
+        }
+    </div>
+}
+@else {
+    <div class="py-2"></div>
+}
+
+<ng-template #subTitle  let-item="item">
+    <p class="x-font-semiBold text-secondary"
+        [ngClass]="item.type === 'sub-title' ? 'font-xs-18' : 'font-xs-25'"
+        style="line-height: 1.2em;"
+        >
+        {{item.text}}
+    </p>
+</ng-template>

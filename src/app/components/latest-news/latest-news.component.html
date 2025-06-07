@@ -1,0 +1,16 @@
+<div class="container" *ngIf="dataList.length" style="margin-top: 100px; margin-bottom: 100px">
+    <div class="row">
+        <div class="col-12">
+            <div class="latest-news-frame">
+                <div class="info-icon-container">
+                    <nz-icon nzType="info-circle" nzTheme="fill" />
+                </div>
+                <div class="ml-3 mt-1">
+                    @for (item of dataList; track item) {
+                        <latest-news-item [item]="item"></latest-news-item>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
