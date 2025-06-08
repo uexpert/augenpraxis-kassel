@@ -1,9 +1,11 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { MainService } from '../../core/services/main.service';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'page-contact',
-  imports: [],
+  imports: [CommonModule, RouterModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })

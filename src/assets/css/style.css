@@ -268,12 +268,12 @@ body{
 	margin-right:0px;
 }
 .header .top-link li a{
-	color:#2C2D3F;
+	color:#2C2D3F !important;
 	font-size:14px;
 	font-weight:400;
 }
 .header .top-link li:hover a{
-	color:#0357af;
+	color: var(--secondary) !important;
 }
 .header .top-contact{
 	float:right;
@@ -281,18 +281,19 @@ body{
 .header .top-contact li{
 	display:inline-block;
 	margin-right:25px;
-	color:#2C2D3F;
+	color:#2C2D3F !important;
 }
 .header .top-contact li:last-child{
 	margin-right:0;
 }
 .header .top-contact li a{
 	font-size:14px;
+	color:#2C2D3F !important;
 }
 .header .top-contact li a:hover{
-	color: var(--secondary);
+	color: var(--secondary) !important;
 }
-.header .top-contact li i{
+.header .top-contact li i, .header .top-contact li nz-icon{
 	color:#0357af;
 	margin-right:8px;
 }

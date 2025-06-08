@@ -6,7 +6,7 @@
                     <nz-icon nzType="info-circle" nzTheme="fill" />
                 </div>
                 <div class="ml-3 mt-1">
-                    @for (item of dataList; track item) {
+                    @for (item of finalList; track item) {
                         <latest-news-item [item]="item"></latest-news-item>
                     }
                 </div>

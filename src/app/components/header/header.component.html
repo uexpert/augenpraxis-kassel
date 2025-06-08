@@ -10,7 +10,7 @@
                     <ul class="top-link">
                         <li><a href="#">About</a></li>
                         <li><a href="#">Doctors</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a [routerLink]="['/contact']">Kontakt</a></li>
                         <li><a href="#">FAQ</a></li>
                     </ul>
                     <!-- End Contact -->
@@ -18,8 +18,25 @@
                 <div class="col-lg-6 col-md-7 col-12">
                     <!-- Top Contact -->
                     <ul class="top-contact">
-                        <li><i class="fa fa-phone"></i><a href="tel:056116567">0561-16567</a></li>
-                        <li><i class="fa fa-envelope"></i><a href="mailto:info@augenpraxis-kassel.de">{{'info@augenpraxis-kassel.de'}}</a></li>
+                        <li>
+                            <a href="tel:+4956116567">
+                                <i class="fa fa-phone"></i>
+                                0561-16567
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@augenpraxis-kassel.de">
+                                <i class="fa fa-envelope"></i>
+                                {{'info@augenpraxis-kassel.de'}}
+                            </a>
+                        </li>
+                        <li>
+                            <a [href]="gds.whatsAppUrl" target="_blank" rel="noopener noreferrer">
+                                <nz-icon nzType="whats-app" nzTheme="outline" />
+                                Whatsapp
+                            </a>
+                        </li>
+                        <!-- <li><i class="fa fa-whatsapp"></i><a href="mailto:info@augenpraxis-kassel.de">Whatsapp</a></li> -->
                     </ul>
                     <!-- End Top Contact -->
                 </div>
@@ -35,7 +52,7 @@
                     <div class="col-lg-3 col-md-3 col-12">
                         <!-- Start Logo -->
                         <div class="logo">
-                            <a href="index.html"><img [src]="imagesPath + 'logo/logo_xs.png'" alt="#"></a>
+                            <a [routerLink]="['/']"><img [src]="imagesPath + 'logo/logo_xs.png'" alt="logo"></a>
                         </div>
                         <!-- End Logo -->
                         <!-- Mobile Nav -->
@@ -66,7 +83,7 @@
                                             <li><a href="blog-single.html">Blog Details</a></li>
                                         </ul>
                                     </li>
-                                    <li [routerLinkActive]="'active'"><a [routerLink]="['/contact']">Contact Us</a></li>
+                                    <li [routerLinkActive]="'active'"><a [routerLink]="['/contact']">Kontakt</a></li>
                                 </ul>
                             </nav>
                         </div>
