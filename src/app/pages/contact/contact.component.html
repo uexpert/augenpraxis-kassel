@@ -25,7 +25,15 @@
                 <div class="col-lg-6">
                     <div class="contact-us-left">
                         <!--Start Google-map -->
-                        <div id="myMap"></div>
+                        <!-- <div id="myMap"></div> -->
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            style="border:0"
+                            loading="lazy"
+                            allowfullscreen
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2493.795905313783!2d9.479006776880347!3d51.31487912474899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bb3f4f53e27995%3A0xfd9acdb99a9cc853!2sAugenarzt%20Eyad%20Naema!5e0!3m2!1sde!2sde!4v1749702441958!5m2!1sde!2sde">
+                        </iframe>
                         <!--/End Google-map -->
                     </div>
                 </div>
@@ -43,29 +51,29 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <input type="email" name="email" placeholder="Email" required="">
+                                        <input type="email" name="email" placeholder="E-Mail" required="">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <input type="text" name="phone" placeholder="Phone" required="">
+                                        <input type="text" name="phone" placeholder="Telefon" required="">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <input type="text" name="subject" placeholder="Subject" required="">
+                                        <input type="text" name="subject" placeholder="Betreff" required="">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <textarea name="message" placeholder="Your Message" required=""></textarea>
+                                        <textarea name="message" placeholder="Ihre Nachricht" required=""></textarea>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group login-btn">
                                         <button class="btn" type="submit">Send</button>
                                     </div>
-                                    <div class="checkbox">
+                                    <div class="checkbox" *ngIf="false">
                                         <label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox">Do you want to subscribe our Newsletter ?</label>
                                     </div>
                                 </div>
