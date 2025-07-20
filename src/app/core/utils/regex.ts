@@ -9,6 +9,8 @@ const NormalNumberRegex = /^[0-9]+$/;
 const NormalNumberRegexGlobal = /[0-9]+/g;
 const EmailRegex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 const EmailRegexGlobal = /([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+/g;
+const TelephoneNumberRegex = /^\s*(?:\+[1-9]\d{3,}|00[1-9]\d{3,}|0[1-9]\d{2,})\s*$/;
+const TelephoneNumberRegex_Global = /^\s*(?:\+[1-9]\d{3,}|00[1-9]\d{3,}|0[1-9]\d{2,})\s*$/g;
 const UrlRegex = /^((((ftp|https?):\/\/)|(www\.))?[\-\w@:%_\+.~#?&\/\/=]+\.[a-zA-Z]{2,6}([\-\w@:%_\+.~#?&\/\/=]*))$/;
 const UrlRegexGlobal = /((((ftp|https?):\/\/)|(www\.))?[\-\w@:%_\+.~#?&\/\/=]+\.[a-zA-Z]{2,6}([\-\w@:%_\+.~#?&\/\/=]*))/g;
 const IBAN = /^DE\d{2}\s\d{4}\s\d{4}\s\d{4}\s\d{4}\s\d{2}$/;
@@ -23,5 +25,6 @@ export {
     EmailRegex, TwoDecimalNumberRegex, IBAN, CustomIBAN, EmailRegexGlobal,
     ClockTimeRegexGlobal, DecimalNumberRegexGlobal, TwoDecimalNumberRegexGlobal,
     NormalNumberRegexGlobal, IBAN_Global, CustomIBAN_Global, UrlRegex, UrlRegexGlobal,
-    CustomPasswordRegex, CustomPasswordRegex_Global
+    CustomPasswordRegex, CustomPasswordRegex_Global, TelephoneNumberRegex,
+    TelephoneNumberRegex_Global
 };

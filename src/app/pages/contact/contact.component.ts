@@ -9,6 +9,7 @@ import { environment } from '../../../environments/environment';
 import { GlobalDataService } from '../../core/services/global-data.service';
 import { emailValidator } from '../../core/utils/globalTools';
 import { NgZorroAntdModule } from '../../core/ng-zorro-antd/ng-zorro-antd.module';
+import { TelephoneNumberRegex } from '../../core/utils/regex';
 
 @Component({
   selector: 'page-contact',
@@ -65,7 +66,7 @@ export class ContactComponent implements OnInit, OnDestroy {
         null,
         [
           Validators.required,
-          Validators.pattern(/\S/)
+          Validators.pattern(TelephoneNumberRegex)
         ],
       ],
       subject: [
@@ -98,24 +99,26 @@ export class ContactComponent implements OnInit, OnDestroy {
 
 
   sendMessage() {
-    const sanitizedMessage = this.form.message.replace(/\r?\n/g, '\\n');
-    const cleanName = this.form.name?.trim() || '';
-    const cleanEmail = this.form.email?.trim() || '';
-    const cleanTelephone = this.form.tel?.trim() || '';
-    const cleanSubject = this.form.subject?.trim() || '';
-    if (sanitizedMessage && cleanEmail && cleanName && cleanSubject && cleanTelephone) {
-      this.http.post(`${this.contactAPI}contact`, {
-        name: cleanName,
-        email: cleanEmail,
-        tel: cleanTelephone,
-        subject: cleanSubject,
-        message: sanitizedMessage
-      }, {
-        headers: { 'Content-Type': 'application/json' }
-      }).subscribe({
-        next: () => alert('✅ Das Formular wurde erfolgreich gesendet.'),
-        error: err => alert('❌ Fehler beim Senden:\n' + err.message)
-      });
+    if (this.gds.contactForm.valid) {
+      const sanitizedMessage = this.gds.contactForm.value.message.replace(/\r?\n/g, '\\n');
+      const cleanName = this.gds.contactForm.value.name?.trim() || '';
+      const cleanEmail = this.gds.contactForm.value.email?.trim() || '';
+      const cleanTelephone = this.gds.contactForm.value.tel?.trim() || '';
+      const cleanSubject = this.gds.contactForm.value.subject?.trim() || '';
+      if (sanitizedMessage && cleanEmail && cleanName && cleanSubject && cleanTelephone) {
+        this.http.post(`${this.contactAPI}contact`, {
+          name: cleanName,
+          email: cleanEmail,
+          tel: cleanTelephone,
+          subject: cleanSubject,
+          message: sanitizedMessage
+        }, {
+          headers: { 'Content-Type': 'application/json' }
+        }).subscribe({
+          next: () => alert('✅ Das Formular wurde erfolgreich gesendet.'),
+          error: err => alert('❌ Fehler beim Senden:\n' + err.message)
+        });
+      }
     }
 
   }

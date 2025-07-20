@@ -8,6 +8,7 @@ import { routes } from './app.routes';
 import { IconDefinition } from '@ant-design/icons-angular';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { provideHttpClient } from '@angular/common/http';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 const icons: IconDefinition[] = [ AccountBookFill, AlertOutline, AlertFill,
                                   WarningFill, EditFill, FilePdfTwoTone,
@@ -21,6 +22,7 @@ export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),
     importProvidersFrom(NzIconModule.forRoot(icons)),
     provideRouter(routes, withInMemoryScrolling({scrollPositionRestoration: 'enabled'})),
-    provideHttpClient()
+    provideHttpClient(),
+    provideAnimationsAsync()
   ]
 };
