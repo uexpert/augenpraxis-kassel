@@ -99,13 +99,16 @@ export class ContactComponent implements OnInit, OnDestroy {
 
 
   sendMessage() {
-    if (this.gds.contactForm.valid) {
-      const sanitizedMessage = this.gds.contactForm.value.message.replace(/\r?\n/g, '\\n');
+    if (this.gds.contactForm.valid && !this.gds.contactFormLoading) {
+      // const sanitizedMessage = this.gds.contactForm.value.message.replace(/\r?\n/g, '\\n');
+      const sanitizedMessage = this.gds.contactForm.value.message;
       const cleanName = this.gds.contactForm.value.name?.trim() || '';
       const cleanEmail = this.gds.contactForm.value.email?.trim() || '';
       const cleanTelephone = this.gds.contactForm.value.tel?.trim() || '';
       const cleanSubject = this.gds.contactForm.value.subject?.trim() || '';
       if (sanitizedMessage && cleanEmail && cleanName && cleanSubject && cleanTelephone) {
+        this.gds.displayLoadingScreen('Sende Nachricht...');
+        this.gds.setContactForm(true);
         this.http.post(`${this.contactAPI}contact`, {
           name: cleanName,
           email: cleanEmail,
@@ -115,9 +118,24 @@ export class ContactComponent implements OnInit, OnDestroy {
         }, {
           headers: { 'Content-Type': 'application/json' }
         }).subscribe({
-          next: () => alert('✅ Das Formular wurde erfolgreich gesendet.'),
-          error: err => alert('❌ Fehler beim Senden:\n' + err.message)
+          next: () => {
+            this.gds.hideLoadingScreen();
+            setTimeout(() => {
+              alert('✅ Das Formular wurde erfolgreich gesendet.');
+            }, 500);
+            this.gds.resetContactForm();
+          },
+          error: err => {
+            this.gds.hideLoadingScreen();
+            alert('❌ Fehler beim Senden:\n' + err.message);
+          },
+          complete: () => {
+            this.gds.setContactForm(false);
+          }
         });
+      }
+      else {
+        alert('❌ Bitte füllen Sie alle Felder korrekt aus.');
       }
     }
 

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { disableEnableFormInput } from '../utils/globalTools';
 
 @Injectable({
   providedIn: 'root'
@@ -7,9 +8,11 @@ import { FormGroup } from '@angular/forms';
 export class GlobalDataService {
   whatsAppUrl: string = '';
   whatsAppMessage: string = '';
-  whatsAppPhone: string = '+4915758931435';
+  whatsAppPhone: string = '+4956116567';
   contactForm!: FormGroup;
   get cForm(): any { return this.contactForm.controls; };
+  contactFormLoading: boolean = false;
+  loadingScreenObj: {show: boolean, text: string} = { show: false, text: 'Loading...' };
 
   constructor() {
     this.setWhatsAppUrl();
@@ -22,4 +25,22 @@ export class GlobalDataService {
         `https://wa.me/${this.whatsAppPhone}`
     }
   }
+  
+  setContactForm(loading: boolean) {
+    this.contactFormLoading = loading;
+    disableEnableFormInput(this.cForm, ['email', 'name', 'message', 'tel', 'subject'], loading);
+  }
+
+  resetContactForm() {
+    this.contactForm.reset();
+  }
+
+  displayLoadingScreen(text: string = '') {
+   this.loadingScreenObj = { show: true, text: text };
+  }
+
+  hideLoadingScreen() {
+    this.loadingScreenObj = { show: false, text: '' };
+  }
+
 }

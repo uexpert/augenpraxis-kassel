@@ -3318,7 +3318,7 @@ body{
 	line-height: 20px;
 	width:100%;
 }
-.contact-us .form .btn:hover{
+.contact-us .form .btn:not([disabled]):hover{
 	background:#0357af;
 	color:#fff;
 }

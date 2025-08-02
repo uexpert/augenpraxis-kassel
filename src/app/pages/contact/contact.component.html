@@ -46,7 +46,7 @@
                             <div class="row">
                                 <div class="col-xl-6">
                                     <nz-form-item>
-                                        <nz-form-control [nzErrorTip]="combineTpl">
+                                        <nz-form-control [nzErrorTip]="combineTpl" class="form-group x-m-0">
                                             <input nz-input formControlName="name" name="name"
                                                 class="form-control" id="contact-name" #nameInput placeholder="Name" style="text-transform: capitalize;" />
                                             <ng-template #combineTpl let-control>
@@ -57,9 +57,9 @@
                                 </div>
                                 <div class="col-xl-6">
                                     <nz-form-item>
-                                        <nz-form-control [nzErrorTip]="emailErrorTemplate">
+                                        <nz-form-control [nzErrorTip]="emailErrorTemplate" class="form-group x-m-0">
                                             <input nz-input formControlName="email"
-                                            class="form-control" id="contact-email" placeholder="E-Mail" #emailInput />
+                                            class="form-control" id="contact-email" placeholder="E-Mail" #emailInput style="text-transform: none;"/>
                                             <ng-template #emailErrorTemplate let-control>
                                                 <ng-container *ngIf="control.hasError('email')">{{'Ungültige E-Mail'}}</ng-container>
                                                 <ng-container *ngIf="control.hasError('required')">{{'E-Mail ist erforderlich'}}</ng-container>
@@ -69,7 +69,7 @@
                                 </div>
                                 <div class="col-xl-6">
                                     <nz-form-item>
-                                        <nz-form-control [nzErrorTip]="TelephoneErrorTemplate">
+                                        <nz-form-control [nzErrorTip]="TelephoneErrorTemplate" class="form-group x-m-0">
                                             <input nz-input formControlName="tel" name="phone"
                                                 class="form-control" id="contact-phone" #telInput placeholder="Telefon" style="text-transform: none;"/>
                                             <ng-template #TelephoneErrorTemplate let-control>
@@ -81,7 +81,7 @@
                                 </div>
                                 <div class="col-xl-6">
                                     <nz-form-item>
-                                        <nz-form-control [nzErrorTip]="SubjectErrorTemplate">
+                                        <nz-form-control [nzErrorTip]="SubjectErrorTemplate" class="form-group x-m-0">
                                             <input nz-input formControlName="subject" name="subject"
                                                 class="form-control" id="contact-subject" #subjectInput placeholder="Betreff" style="text-transform: none;"/>
                                             <ng-template #SubjectErrorTemplate let-control>
@@ -92,9 +92,9 @@
                                 </div>
                                 <div class="col-xl-12">
                                     <nz-form-item>
-                                        <nz-form-control [nzErrorTip]="MessageErrorTemplate">
+                                        <nz-form-control [nzErrorTip]="MessageErrorTemplate" class="form-group x-m-0">
                                             <textarea nz-input formControlName="message" name="message"
-                                                class="form-control" id="contact-message" #messageInput placeholder="Ihre Nachricht" style="text-transform: none;"></textarea>
+                                                class="form-control fixed-height" id="contact-message" #messageInput placeholder="Ihre Nachricht" style="text-transform: none;"></textarea>
                                             <ng-template #MessageErrorTemplate let-control>
                                                 <ng-container *ngIf="control.hasError('required') || control.hasError('pattern')">{{'Die Nachricht ist erforderlich'}}</ng-container>
                                             </ng-template>
@@ -119,8 +119,8 @@
                                     </div>
                                 </div> -->
                                 <div class="col-12">
-                                    <div class="form-group login-btn">
-                                        <button class="btn" type="submit" [disabled]="gds.contactForm.invalid">Send</button>
+                                    <div class="form-group login-btn x-my-2">
+                                        <button class="btn" type="submit" [disabled]="gds.contactForm.invalid || gds.contactFormLoading">Send</button>
                                     </div>
                                     <div class="checkbox" *ngIf="false">
                                         <label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox">Do you want to subscribe our Newsletter ?</label>

@@ -5,11 +5,23 @@
         <div class="loader-outter"></div>
         <div class="loader-inner"></div>
 
-        <div class="indicator"> 
-            <svg width="16px" height="12px">
+        <div class="indicator">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50"
+                width="24px" height="12px"
+                >
+                <path  id="back"
+                    d="M 10 25 C 30 0, 70 0, 90 25 C 70 50, 30 50, 10 25 Z
+                    M 62 25 A 12 12 0 1 1 38 25 A 12 12 0 1 1 62 25 Z" 
+                />
+                <path  id="front"
+                    d="M 10 25 C 30 0, 70 0, 90 25 C 70 50, 30 50, 10 25 Z
+                    M 62 25 A 12 12 0 1 1 38 25 A 12 12 0 1 1 62 25 Z" 
+                />
+            </svg>
+            <!-- <svg width="16px" height="12px">
                 <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
                 <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
-            </svg>
+            </svg> -->
         </div>
     </div>
 </div>
@@ -33,3 +45,7 @@
 <comp-header></comp-header>
 <page-main></page-main>
 <comp-footer></comp-footer>
+
+<!-- loading screen -->
+<loading-screen *ngIf="gds.loadingScreenObj.show"></loading-screen>
+<!-- end loading screen -->
