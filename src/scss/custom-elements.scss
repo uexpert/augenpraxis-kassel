@@ -48,3 +48,27 @@ textarea.fixed-height {
   height: 150px;
   resize: none;
 }
+
+.custom-link {
+    color: #fff;
+    font-weight: 500;
+    display: inline-block;
+    position: relative;
+}
+
+
+
+ul.time-custom-list {
+    margin: 0;
+    li.day {
+        color: var(--white);
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    }
+}
+
+nz-icon.footer-whatsapp-icon {
+    vertical-align: 0;
+}
+

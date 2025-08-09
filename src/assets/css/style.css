@@ -3380,8 +3380,8 @@ body{
 }
 .contact-us .single-info {
 	background: #0357af;
-	padding: 40px 60px;
-	height: 150px;
+	padding: 40px 40px;
+	height: -webkit-fill-available;
 	border-radius: 10px;
 	position:relative;
 	-webkit-transition: all .3s ease-out 0s;
@@ -3389,6 +3389,8 @@ body{
     -ms-transition: all .3s ease-out 0s;
     -o-transition: all .3s ease-out 0s;
     transition: all .3s ease-out 0s;
+	display: flex;
+	align-items: center;
 }
 .contact-us .single-info:before{
 	position: absolute;
@@ -3419,7 +3421,7 @@ body{
 	font-size:42px;
 	color:#fff;
 	position:absolute;
-	left:40px;
+	left:30px;
 }
 .contact-us .single-info .content {
 	margin-left: 45px;
