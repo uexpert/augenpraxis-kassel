@@ -98,7 +98,7 @@ export class ContactComponent implements OnInit, OnDestroy {
   }
 
 
-  sendMessage() {
+  async sendMessage() {
     if (this.gds.contactForm.valid && !this.gds.contactFormLoading) {
       // const sanitizedMessage = this.gds.contactForm.value.message.replace(/\r?\n/g, '\\n');
       const sanitizedMessage = this.gds.contactForm.value.message;
@@ -109,6 +109,7 @@ export class ContactComponent implements OnInit, OnDestroy {
       if (sanitizedMessage && cleanEmail && cleanName && cleanSubject && cleanTelephone) {
         this.gds.displayLoadingScreen('Sende Nachricht...');
         this.gds.setContactForm(true);
+        await new Promise(resolve => setTimeout(resolve, 500));
         this.http.post(`${this.contactAPI}contact`, {
           name: cleanName,
           email: cleanEmail,
