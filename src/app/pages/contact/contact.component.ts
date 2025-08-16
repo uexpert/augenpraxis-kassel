@@ -128,6 +128,7 @@ export class ContactComponent implements OnInit, OnDestroy {
           },
           error: err => {
             this.gds.hideLoadingScreen();
+            this.gds.setContactForm(false);
             alert('❌ Fehler beim Senden:\n' + err.message);
           },
           complete: () => {
