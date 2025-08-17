@@ -73,3 +73,62 @@ export const praxisClose = [
         ''
     )
 ];
+
+export const praxisCloseAugust = [
+    new LatestNewsItem(
+        'normal-p-b', 'Liebe Patient:innen,',
+        ''
+    ),
+    new LatestNewsItem(
+        'normal-p', 'im Zeitraum von <span class="x-font-semiBold">18.08.2025</span> bis einschließlich <span class="x-font-semiBold">29.08.2025</span> bleibt unsere Praxis aufgrund von Urlaub geschlossen.',
+        ''
+    ),
+    new LatestNewsItem(
+        'sub-title', 'Unsere Vertretung:',
+        ''
+    ),
+    new LatestNewsItem(
+        'normal-b', 'ÜBAG Najjar - Naema',
+        '20px'
+    ),
+    new LatestNewsItem(
+        'normal-b', 'Augenarztpraxis Najjar',
+        '20px'
+    ),
+    new LatestNewsItem(
+        'normal-b', 'Louis-Peter-Straße 4-8',
+        '20px'
+    ),
+    new LatestNewsItem(
+        'normal-b', '34497 Korbach',
+        '20px'
+    ),
+    new LatestNewsItem(
+        'normal-p-b', 'Tel: <a href="tel:+49563163063">05631-63063</a>',
+        '20px'
+    ),
+    new LatestNewsItem(
+        'normal-p', 'In dringenden Notfällen können Sie sich auch an den Ärztlichen Bereitschaftsdienst unter der Tel. Nr.: <span class="x-font-semiBold">116117</span> wenden.',
+        ''
+    ),
+    new LatestNewsItem(
+        'normal', 'Terminabgabe können Sie uns weiter kontaktieren:',
+        ''
+    ),
+    new LatestNewsItem(
+        'normal', 'Email: <a href="mailto:info@augenpraxis-kassel.de">info@augenpraxis-kassel.de</a>',
+        ''
+    ),
+    new LatestNewsItem(
+        'normal-p', 'Oder <a href="https://www.augenpraxis-kassel.de" target="_blank">www.augenpraxis-kassel.de</a>',
+        ''
+    ),
+    new LatestNewsItem(
+        'normal', 'Wir bitten um Ihr Verständnis.',
+        ''
+    ),
+    new LatestNewsItem(
+        'normal', 'Ihr Praxis-Team',
+        ''
+    )
+];
