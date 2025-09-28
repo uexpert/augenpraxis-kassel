@@ -80,7 +80,7 @@ export const praxisCloseAugust = [
         ''
     ),
     new LatestNewsItem(
-        'normal-p', 'im Zeitraum von <span class="x-font-semiBold">18.08.2025</span> bis einschließlich <span class="x-font-semiBold">29.08.2025</span> bleibt unsere Praxis aufgrund von Urlaub geschlossen.',
+        'normal-p', 'im Zeitraum von <span class="x-font-semiBold">27.10.2025</span> bis einschließlich <span class="x-font-semiBold">31.10.2025</span> bleibt unsere Praxis aufgrund von Urlaub geschlossen.',
         ''
     ),
     new LatestNewsItem(
