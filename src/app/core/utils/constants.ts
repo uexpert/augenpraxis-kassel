@@ -74,19 +74,8 @@ export const praxisClose = [
     )
 ];
 
-export const praxisCloseAugust = [
-    new LatestNewsItem(
-        'normal-p-b', 'Liebe Patient:innen,',
-        ''
-    ),
-    new LatestNewsItem(
-        'normal-p', 'im Zeitraum von <span class="x-font-semiBold">27.10.2025</span> bis einschließlich <span class="x-font-semiBold">31.10.2025</span> bleibt unsere Praxis aufgrund von Urlaub geschlossen.',
-        ''
-    ),
-    new LatestNewsItem(
-        'sub-title', 'Unsere Vertretung:',
-        ''
-    ),
+
+const augenarztPraxisNajjar: Array<LatestNewsItem> = [
     new LatestNewsItem(
         'normal-b', 'ÜBAG Najjar - Naema',
         '20px'
@@ -106,11 +95,65 @@ export const praxisCloseAugust = [
     new LatestNewsItem(
         'normal-p-b', 'Tel: <a href="tel:+49563163063">05631-63063</a>',
         '20px'
+    )
+];
+
+const AugenzentrumBadWildungen: Array<LatestNewsItem> = [
+    new LatestNewsItem(
+        'normal-b', 'Augenzentrum Bad Wildungen',
+        '20px'
     ),
     new LatestNewsItem(
+        'normal-b', 'Asklepios Gesundheitszentrum',
+        '20px'
+    ),
+    new LatestNewsItem(
+        'normal-b', 'Laustraße 30, 3. Stock',
+        '20px'
+    ),
+    new LatestNewsItem(
+        'normal-b', '34537 Bad Wildungen',
+        '20px'
+    ),
+    new LatestNewsItem(
+        'normal-b', 'Tel: <a href="tel:+4956214166">05621-4166</a>',
+        '20px'
+    ),
+    new LatestNewsItem(
+        'normal-p-b', 'Fax: <a href="fax:+4956211700">05621-1700</a>',
+        '20px'
+    )
+];
+
+const dringendeNotfaelle: LatestNewsItem = new LatestNewsItem(
         'normal-p', 'In dringenden Notfällen können Sie sich auch an den Ärztlichen Bereitschaftsdienst unter der Tel. Nr.: <span class="x-font-semiBold">116117</span> wenden.',
         ''
+    );
+
+export const AugustUrlaub2025: LatestNewsItem = 
+    new LatestNewsItem(
+        'normal-p', 'im Zeitraum von <span class="x-font-semiBold">27.10.2025</span> bis einschließlich <span class="x-font-semiBold">31.10.2025</span> bleibt unsere Praxis aufgrund von Urlaub geschlossen.',
+        ''
+    );
+
+export const EasterUrlaub2026: LatestNewsItem = 
+    new LatestNewsItem(
+        'normal-p', 'im Zeitraum von <span class="x-font-semiBold">06.04.2026</span> bis einschließlich <span class="x-font-semiBold">10.04.2026</span> bleibt unsere Praxis aufgrund von Urlaub geschlossen.',
+        ''
+    );
+
+export const praxisUrlaub = [
+    new LatestNewsItem(
+        'normal-p-b', 'Liebe Patient:innen,',
+        ''
     ),
+    EasterUrlaub2026,
+    new LatestNewsItem(
+        'sub-title', 'Unsere Vertretung:',
+        ''
+    ),
+    ...AugenzentrumBadWildungen,
+    dringendeNotfaelle,
     new LatestNewsItem(
         'normal', 'Terminabgabe können Sie uns weiter kontaktieren:',
         ''
