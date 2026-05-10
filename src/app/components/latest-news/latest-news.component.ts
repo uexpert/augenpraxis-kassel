@@ -5,6 +5,7 @@ import { LatestNewsItemComponent } from '../latest-news-item/latest-news-item.co
 import { LatestNewsItem } from '../../core/utils/models_interfaces';
 import { DomSanitizer } from '@angular/platform-browser';
 import _ from 'lodash';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'latest-news',
@@ -14,13 +15,16 @@ import _ from 'lodash';
 })
 export class LatestNewsComponent implements OnInit {
   @Input() dataList: Array<LatestNewsItem> = [];
+  @Input() showInfoIcon: boolean = true;
+
   sanitizer = inject(DomSanitizer);
   finalList: Array<any> = [];
+  imagesPath = environment.imagesPath;
 
   ngOnInit(): void {
     this.onInit();
   }
-  
+
   onInit() {
     this.finalList = [];
     if (this.dataList.length) {

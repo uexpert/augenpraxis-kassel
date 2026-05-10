@@ -194,7 +194,11 @@ input[type="number"] {
 }
 
 .font-sm-18 {
-    font-size: clamp(16px, 3.25vw, 18px) !important;
+    font-size: clamp(16px, 2.8vw, 18px) !important;
+}
+
+.font-sm-25 {
+    font-size: clamp(20px, 2.8vw, 25px) !important;
 }
 
 .font-xs-32 {

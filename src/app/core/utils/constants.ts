@@ -175,3 +175,124 @@ export const praxisUrlaub = [
         ''
     )
 ];
+
+
+export const stelleAnzeige = [
+    new LatestNewsItem(
+        'title', 'Stellenanzeige: MFA und Optiker (m/w/d) für Augenarztpraxis in Kassel – Vorderer Westen:',
+        ''
+    ),
+    new LatestNewsItem(
+        'normal-p', 'Für unsere moderne Augenarztpraxis im beliebten Stadtteil Vorderer Westen in <span class="x-font-semiBold">Kassel</span> suchen wir ab sofort engagierte Unterstützung:',
+        ''
+    ),
+    new LatestNewsItem(
+        'normal-p-b', 'Medizinische Fachangestellte (MFA) (m/w/d)',
+        ''
+    ),
+    new LatestNewsItem(
+        'normal-p-b', 'Augenoptiker (m/w/d)',
+        ''
+    ),
+    new LatestNewsItem(
+        'sub-title', 'Wir bieten:',
+        ''
+    ),
+    new LatestNewsItem(
+        'unorder-list', '',
+        '', [
+            'Attraktive und leistungsgerechte Vergütung',
+            'Angenehmes Arbeitsumfeld in einem freundlichen, kollegialen Team',
+            'Moderne Praxisausstattung',
+            'Strukturierte Einarbeitung',
+            'Langfristige Perspektive'
+        ]
+    ),
+    new LatestNewsItem(
+        'sub-title', 'Ihre Aufgaben (je nach Qualifikation):',
+        ''
+    ),
+    new LatestNewsItem(
+        'unorder-list', '',
+        '', [
+            'Betreuung und Beratung unserer Patientinnen und Patienten',
+            'Assistenz bei Untersuchungen und Behandlungen',
+            'Durchführung von Voruntersuchungen',
+            'Organisation von Praxisabläufen und Terminmanagement',
+            'Unterstützung im Bereich Augenoptik (z. B. Sehtests, Anpassungen)'
+        ]
+    ),
+    new LatestNewsItem(
+        'sub-title', 'Ihr Profil:',
+        ''
+    ),
+    new LatestNewsItem(
+        'unorder-list', '',
+        '', [
+            'Abgeschlossene Ausbildung als MFA oder Augenoptiker (m/w/d)',
+            'Freundliches, professionelles Auftreten',
+            'Teamfähigkeit und Zuverlässigkeit',
+            'Selbstständige und sorgfältige Arbeitsweise'
+        ]
+    ),
+    new LatestNewsItem(
+        'normal', '<span class="x-font-semiBold"><span class="x-font-semiBold">Arbeitsort:</span></span> Kassel - Vorderer Westen',
+        ''
+    ),
+    new LatestNewsItem(
+        'normal-p', '<span class="x-font-semiBold"><span class="x-font-semiBold">Start:</span></span> Ab sofort',
+        ''
+    ),
+    new LatestNewsItem(
+        'normal', '<span class="x-font-semiBold"><span class="x-font-semiBold">Bewerbung:</span></span>',
+        ''
+    ),
+    new LatestNewsItem(
+        'normal-p', 'Bitte senden Sie Ihre Bewerbung per E-Mail an: <a href="mailto:bewerbung@augenpraxis-kassel.de">bewerbung@augenpraxis-kassel.de</a>',
+        ''
+    ),
+    new LatestNewsItem(
+        'normal', 'Wir freuen uns darauf, Sie kennenzulernen!',
+        ''
+    )
+];
+
+
+// Stellenanzeige: MFA und Optiker (m/w/d) für Augenarztpraxis in Kassel – Vorderer Westen
+
+// Für unsere moderne Augenarztpraxis im beliebten Stadtteil Vorderer Westen in Kassel suchen wir ab sofort engagierte Unterstützung:
+
+// Medizinische Fachangestellte (MFA) (m/w/d)
+// Augenoptiker (m/w/d)
+
+// Wir bieten:
+
+// * Attraktive und leistungsgerechte Vergütung
+// * Angenehmes Arbeitsumfeld in einem freundlichen, kollegialen Team
+// * Moderne Praxisausstattung
+// * Strukturierte Einarbeitung
+// * Langfristige Perspektive
+
+// Ihre Aufgaben (je nach Qualifikation):
+
+// * Betreuung und Beratung unserer Patientinnen und Patienten
+// * Assistenz bei Untersuchungen und Behandlungen
+// * Durchführung von Voruntersuchungen
+// * Organisation von Praxisabläufen und Terminmanagement
+// * Unterstützung im Bereich Augenoptik (z. B. Sehtests, Anpassungen)
+
+// Ihr Profil:
+
+// * Abgeschlossene Ausbildung als MFA oder Augenoptiker (m/w/d)
+// * Freundliches, professionelles Auftreten
+// * Teamfähigkeit und Zuverlässigkeit
+// * Selbstständige und sorgfältige Arbeitsweise
+
+// Arbeitsort: Kassel – Vorderer Westen
+// Start: Ab sofort
+
+// Bewerbung:
+// Bitte senden Sie Ihre Bewerbung per E-Mail an:
+// bewerbung[at]augenpraxis-kassel.de
+
+// Wir freuen uns darauf, Sie kennenzulernen!

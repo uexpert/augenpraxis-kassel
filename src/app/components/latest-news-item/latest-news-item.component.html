@@ -19,12 +19,12 @@
             @case ('unorder-list') {
                 <ul class="custom-list">
                     @for (str of item.list; track str) {
-                        <li [innerHTML]="str"></li>
+                        <li [innerHTML]="str" class="text-primary font-sm-16"></li>
                     }
                 </ul>
             }
             @default {
-                <p class="text-primary font-xs-16"
+                <p class="text-primary font-sm-16"
                     [ngClass]="{'x-font-semiBold': ['normal-b', 'normal-p-b'].includes(item.type),
                                 'no-margin': ['normal', 'normal-b'].includes(item.type)
                                 }"
@@ -40,7 +40,7 @@
 
 <ng-template #subTitle  let-item="item">
     <p class="x-font-semiBold text-secondary"
-        [ngClass]="item.type === 'sub-title' ? 'font-xs-18' : 'font-xs-25'"
+        [ngClass]="item.type === 'sub-title' ? 'font-sm-18' : 'font-sm-25'"
         style="line-height: 1.2em;"
         [innerHTML]="item.text">
     </p>

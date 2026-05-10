@@ -2,8 +2,11 @@
     <div class="row">
         <div class="col-12">
             <div class="latest-news-frame">
-                <div class="info-icon-container">
+                <div class="info-icon-container" *ngIf="showInfoIcon">
                     <nz-icon nzType="info-circle" nzTheme="fill" />
+                </div>
+                <div class="pb-4 pb-md-5 pt-3" style="max-width: 900px;margin: auto;">
+                    <img [src]="imagesPath + 'stellenanzeige.jpeg'" alt="#">
                 </div>
                 <div class="ml-3 mt-1">
                     @for (item of finalList; track item) {
