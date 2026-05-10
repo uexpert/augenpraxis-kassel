@@ -73,6 +73,16 @@ npm test               # Run Karma tests
 - **Post-build:** `copy-htaccess.js` copies `.htaccess` from `src/assets/` to dist
 - **Backend API:** Contact form submits to Render.com (`contact-backend-api-bxgx.onrender.com`)
 
+## Caching Strategy
+
+`src/assets/.htaccess` enforces a three-tier cache policy so deployed changes appear without a hard reload:
+
+- **`index.html`** → `Cache-Control: no-cache, no-store, must-revalidate` (always re-fetched, picks up new hashed bundle names on every visit). Reinforced by `<meta http-equiv>` tags in `src/index.html`.
+- **Hashed Angular bundles** (`*.[hash].js|css|woff2|...`) → `Cache-Control: public, max-age=31536000, immutable`. Safe because `outputHashing: "all"` is set in `angular.json` for the production config.
+- **Unhashed assets under `/assets/`** (images, legacy CSS/JS) → `Cache-Control: no-cache, must-revalidate` with `ETag` enabled. Browser sends conditional requests; Apache returns `304` when unchanged or `200` with new content when modified.
+
+Requires Apache `mod_headers` and `mod_expires` (both standard alongside the existing `mod_rewrite`). All directives are wrapped in `<IfModule>` guards so missing modules are no-ops rather than failures.
+
 ## Environment Configuration
 
 | Setting      | Production                                          | Development              |
